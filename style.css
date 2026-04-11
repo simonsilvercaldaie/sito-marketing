@@ -1082,11 +1082,11 @@ img {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-    .nav-links {
+    .nav-link {
         display: none;
     }
     .nav-mobile-toggle {
-        display: flex;
+        display: none;
     }
     
     .problem-grid {

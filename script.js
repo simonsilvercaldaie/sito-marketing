@@ -21,24 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScroll = currentScroll;
     }, { passive: true });
 
-    // ===== MOBILE NAV TOGGLE =====
-    const navToggle = document.getElementById('navToggle');
-    const navMobile = document.getElementById('navMobile');
-
-    if (navToggle && navMobile) {
-        navToggle.addEventListener('click', () => {
-            navMobile.classList.toggle('open');
-            navToggle.classList.toggle('active');
-        });
-
-        // Close mobile menu on link click
-        navMobile.querySelectorAll('.nav-mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMobile.classList.remove('open');
-                navToggle.classList.remove('active');
-            });
-        });
-    }
 
     // ===== SCROLL ANIMATIONS (IntersectionObserver) =====
     const observerOptions = {
@@ -124,19 +106,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // ===== NAVBAR MOBILE TOGGLE ANIMATION =====
-    const style = document.createElement('style');
-    style.textContent = `
-        .nav-mobile-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .nav-mobile-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .nav-mobile-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-    `;
-    document.head.appendChild(style);
 
 });
