@@ -1178,4 +1178,20 @@ img {
     .comparison-col {
         padding: 2rem 1.5rem;
     }
+    
+    .about-credentials {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .credential {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        flex: 1 1 30%;
+        padding: 1rem 0.5rem;
+        font-size: 0.8rem;
+        gap: 0.5rem;
+    }
 }
