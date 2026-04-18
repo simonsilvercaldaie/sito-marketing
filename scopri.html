@@ -44,6 +44,42 @@
     
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== LOADER ===== */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: #0a0a0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            transition: opacity 0.4s ease;
+        }
+        .loader.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loader-spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid rgba(245,158,11,0.15);
+            border-top-color: #f59e0b;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Contenuto nascosto fino al caricamento */
+        .page-content {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .page-content.loaded {
+            opacity: 1;
+        }
         
         :root {
             --bg: #0a0a0f;
@@ -236,9 +272,16 @@
 </head>
 <body>
 
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="page-content" id="page-content">
+
     <!-- IMMAGINE HERO (tagliata senza tasto WhatsApp) -->
     <div class="hero-container">
-        <img src="img/link%20qr%20v2.png" alt="La Caldaia — Controllo totale sulla tua caldaia e impianto — Simon Silver" class="hero-image">
+        <img src="img/link%20qr%20v2.png" alt="La Caldaia — Controllo totale sulla tua caldaia e impianto — Simon Silver" class="hero-image" id="hero-img">
     </div>
 
     <!-- BOTTONI REALI SOTTO L'IMMAGINE -->
@@ -281,13 +324,37 @@
         Simon Silver Assistenza Caldaie di Caroleo Simone · P.IVA 03235620121 · Casciago (VA) · <a href="https://simonsilver.it">simonsilver.it</a>
     </footer>
 
-    <!-- TRACKING -->
+    </div><!-- /page-content -->
+
+    <!-- TRACKING + LOADER LOGIC -->
     <script>
         (function() {
+            // Tracking volantino
             var params = new URLSearchParams(window.location.search);
             var variant = params.get('v') || 'diretto';
             sessionStorage.setItem('volantino_variante', variant);
             console.log('[Simon Silver] Volantino variante:', variant);
+
+            // Loader: aspetta che l'immagine sia caricata
+            var img = document.getElementById('hero-img');
+            var loader = document.getElementById('loader');
+            var content = document.getElementById('page-content');
+
+            function showPage() {
+                loader.classList.add('hide');
+                content.classList.add('loaded');
+                setTimeout(function() { loader.style.display = 'none'; }, 400);
+            }
+
+            if (img.complete) {
+                showPage();
+            } else {
+                img.addEventListener('load', showPage);
+                img.addEventListener('error', showPage); // mostra comunque se c'è errore
+            }
+
+            // Fallback: mostra dopo 4 secondi max
+            setTimeout(showPage, 4000);
         })();
     </script>
 
