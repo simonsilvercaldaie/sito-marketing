@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>La Caldaia! · Simon Silver · Assistenza Caldaie Varese</title>
+    <meta name="description" content="La tua caldaia lavora ogni giorno per te, ma te la dimentichi. Controllo totale sulla tua caldaia e impianto. Simon Silver — 20 anni di esperienza, solo caldaie.">
+    <link rel="canonical" href="https://simonsilver.it/scopri">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="La Caldaia! — Lo sai cos'è? · Simon Silver">
+    <meta property="og:description" content="La usi ogni giorno ma non la conosci. Scopri perché dovresti prenderti cura della tua caldaia.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:url" content="https://simonsilver.it/scopri">
+    <meta property="og:image" content="https://simonsilver.it/img/og-image.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Simon Silver Assistenza Caldaie",
+        "telephone": "+393493852854",
+        "url": "https://simonsilver.it",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via San Martino 14L",
+            "addressLocality": "Casciago",
+            "postalCode": "21020",
+            "addressRegion": "VA",
+            "addressCountry": "IT"
+        },
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Provincia di Varese"
+        }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg: #0a0a0f;
+            --font: 'Inter', -apple-system, sans-serif;
+            --green: #25d366;
+            --green-hover: #20bd5a;
+            --red: #cd201f;
+            --red-hover: #ff0000;
+            --radius: 14px;
+            --border: rgba(255,255,255,0.07);
+            --muted: #8888a0;
+            --dim: #555570;
+        }
+
+        html { -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: #e8e8ef;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO IMAGE ===== */
+        .hero-container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== BOTTONI SOTTO L'IMMAGINE ===== */
+        .cta-section {
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        /* TASTO WHATSAPP — verde, con pulse animation */
+        .cta-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            background: var(--green);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: var(--font);
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 25px rgba(37,211,102,0.3);
+            transition: all 0.3s ease;
+            animation: pulse-green 2.5s ease-in-out infinite;
+        }
+        .cta-whatsapp:hover {
+            background: var(--green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(37,211,102,0.4);
+        }
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 4px 25px rgba(37,211,102,0.3); }
+            50% { box-shadow: 0 4px 35px rgba(37,211,102,0.5), 0 0 0 6px rgba(37,211,102,0.08); }
+        }
+
+        .cta-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.85rem 1.5rem;
+            background: transparent;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: var(--font);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .cta-phone:hover {
+            border-color: var(--dim);
+            color: #e8e8ef;
+            transform: translateY(-2px);
+        }
+
+        /* TASTO YOUTUBE — rosso, stessa animazione hover */
+        .cta-youtube {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            margin-top: 0.4rem;
+            background: var(--red);
+            color: #ffffff;
+            border: none;
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .cta-youtube:hover {
+            background: var(--red-hover);
+            transform: translateY(-2px);
+        }
+        .cta-youtube strong {
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .cta-youtube span {
+            font-size: 0.72rem;
+            font-weight: 500;
+            margin-top: 0.1rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .cta-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--dim);
+        }
+
+        /* ===== PROVA SOCIALE ===== */
+        .proof {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            padding: 0 0.25rem;
+            margin-top: 0.25rem;
+        }
+        .proof-divider {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .proof-badges {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+        .proof-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--dim);
+            white-space: nowrap;
+        }
+        .proof-badge strong {
+            color: var(--muted);
+        }
+
+        /* ===== FOOTER ===== */
+        .foot {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.65rem;
+            color: var(--dim);
+        }
+        .foot a {
+            color: var(--muted);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- IMMAGINE HERO (tagliata senza tasto WhatsApp) -->
+    <div class="hero-container">
+        <img src="img/link%20qr%20v2.png" alt="La Caldaia — Controllo totale sulla tua caldaia e impianto — Simon Silver" class="hero-image">
+    </div>
+
+    <!-- BOTTONI REALI SOTTO L'IMMAGINE -->
+    <div class="cta-section">
+
+        <!-- TASTO VERDE WHATSAPP — vero, cliccabile, con hover e pulse -->
+        <a href="https://wa.me/393493852854?text=Ciao%2C%20ho%20visto%20il%20volantino%20e%20vorrei%20informazioni%20sulla%20manutenzione%20caldaia."
+           target="_blank" rel="noopener" class="cta-whatsapp" id="cta-whatsapp-scopri">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Scrivimi su WhatsApp
+        </a>
+
+        <a href="tel:+393493852854" class="cta-phone" id="cta-phone-scopri">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            349 385 2854
+        </a>
+        <p class="cta-note">Rispondo io personalmente.</p>
+        
+        <!-- TASTO ROSSO YOUTUBE -->
+        <a href="https://www.youtube.com/channel/UCDuus29wRyq5kXSGp0_i0vQ" target="_blank" rel="noopener" class="cta-youtube" id="cta-youtube-scopri">
+            <strong>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Canale YouTube 25k
+            </strong>
+            <span>Vieni a vedere chi sono</span>
+        </a>
+
+        <div class="proof">
+            <div class="proof-divider"></div>
+            <div class="proof-badges">
+                <span class="proof-badge"><strong>20 anni</strong> esperienza</span>
+                <span class="proof-badge">·</span>
+                <span class="proof-badge"><strong>Solo caldaie</strong></span>
+            </div>
+            <div class="proof-divider"></div>
+        </div>
+    </div>
+
+    <footer class="foot">
+        Simon Silver Assistenza Caldaie di Caroleo Simone · P.IVA 03235620121 · Casciago (VA) · <a href="https://simonsilver.it">simonsilver.it</a>
+    </footer>
+
+    <!-- TRACKING -->
+    <script>
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var variant = params.get('v') || 'diretto';
+            sessionStorage.setItem('volantino_variante', variant);
+            console.log('[Simon Silver] Volantino variante:', variant);
+        })();
+    </script>
+
+</body>
+</html>

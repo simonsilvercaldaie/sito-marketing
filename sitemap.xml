@@ -13,6 +13,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://simonsilver.it/scopri</loc>
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://simonsilver.it/zone/varese</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>monthly</changefreq>
