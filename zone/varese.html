@@ -19,17 +19,45 @@
     <meta property="og:url" content="https://simonsilver.it/zone/varese">
     <meta property="og:image" content="https://simonsilver.it/img/og-image.png">
 
-    <!-- Schema.org LocalBusiness — Specifico per Varese -->
+    <!-- Schema.org LocalBusiness (HVACBusiness UKT Standard per Varese) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Simon Silver Assistenza Caldaie",
-        "legalName": "Simon Silver Assistenza Caldaie di Caroleo Simone",
-        "description": "Assistenza e manutenzione caldaie specializzata a Varese",
-        "url": "https://simonsilver.it/zone/varese",
+        "@type": ["HVACBusiness", "HomeAndConstructionBusiness", "LocalBusiness"],
+        "@id": "https://simonsilver.it/zone/varese#hvacbusiness",
+        "name": "SIMON SILVER ASSISTENZA CALDAIE DI CAROLEO SIMONE",
+        "alternateName": "Simon Silver Assistenza Caldaie Varese",
+        "description": "Assistenza, manutenzione ordinaria, analisi fumi e riparazione caldaie a Varese (21100) e provincia",
+        "url": "https://simonsilver.it/zone/varese.html",
         "telephone": "+393493852854",
-        "email": "simonsilvercaldaie@gmail.com",
+        "email": "simonsilver@tiscali.it",
+        "vatID": "IT03235620121",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via San Martino 14",
+            "addressLocality": "Casciago",
+            "postalCode": "21020",
+            "addressRegion": "VA",
+            "addressCountry": "IT"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.8341,
+            "longitude": 8.7733
+        },
+        "sameAs": [
+            "https://share.google/7p84HL7bNiG7vb4Li",
+            "https://www.youtube.com/@SimonSilverCaldaie",
+            "https://www.instagram.com/simon_silver"
+        ],
+        "knowsAbout": [
+            "Manutenzione Caldaie Varese",
+            "Abilitazione D.M. 37/08 Impianti Termici",
+            "Bollino Caldaie CURIT Regione Lombardia",
+            "Diagnosi Guasti Scheda Elettronica",
+            "Controllo Fumi di Combustione"
+        ],
         "areaServed": {
             "@type": "City",
             "name": "Varese",
@@ -38,15 +66,6 @@
                 "name": "Provincia di Varese"
             }
         },
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Via San Martino 14L",
-            "addressLocality": "Casciago",
-            "postalCode": "21020",
-            "addressRegion": "VA",
-            "addressCountry": "IT"
-        },
-        "priceRange": "€€€",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Servizi Caldaie a Varese",
