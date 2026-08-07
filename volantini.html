@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Volantini A6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* A6 format landscape at 300dpi is 1748 x 1240 px, let's scale it down for web preview */
+        .volantino {
+            width: 1748px;
+            height: 1240px;
+            background: #111;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+            border: 1px solid #000;
+            /* Scale for preview */
+            transform-origin: top left;
+            zoom: 0.5;
+        }
+
+        /* Gradient overlay to make it look premium (like the billboard) */
+        .volantino::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(30,30,40,1) 0%, rgba(10,10,15,1) 100%);
+            z-index: 0;
+        }
+
+        .content {
+            z-index: 1;
+            padding: 120px 0 120px 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            width: 60%;
+        }
+
+        .qr-section {
+            z-index: 1;
+            padding-right: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        .qr-box img {
+            width: 350px;
+            height: 350px;
+            display: block;
+        }
+
+        .signature {
+            color: #d1d5db;
+            font-size: 38px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            align-self: flex-end;
+            margin-right: 20px;
+        }
+
+        /* Testo Stili Generici */
+        .testo-linea {
+            font-size: 85px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .testo-linea.highlight {
+            color: #f59e0b; /* Arancione/Giallo Simon Silver */
+        }
+
+        .testo-domanda {
+            font-family: 'Playfair Display', serif;
+            font-size: 200px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            margin-top: 40px;
+            text-transform: none;
+            letter-spacing: -2px;
+        }
+
+        /* Varianti di testo specifico */
+        .volantino-1 .testo-linea { font-size: 78px; }
+        .volantino-1 .testo-domanda { font-size: 140px; margin-top: 50px; color: #f59e0b;}
+
+        .volantino-2 .testo-domanda { font-size: 220px; margin-top: 20px;}
+
+    </style>
+</head>
+<body>
+
+    <!-- VOLANTINO 1: Auto -->
+    <div class="volantino volantino-1" id="v-auto">
+        <div class="content">
+            <div class="testo-linea">Hai 2 macchine che</div>
+            <div class="testo-linea">hanno bisogno di un</div>
+            <div class="testo-linea highlight">controllo annuale.</div>
+            <div class="testo-linea" style="margin-top: 30px;">Una è la tua auto.</div>
+            <div class="testo-domanda">L'altra?</div>
+        </div>
+        <div class="qr-section">
+            <div class="qr-box">
+                <!-- QR Code generato dinamicamente con l'URL per la variante auto -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=https://simonsilver.it/scopri?v=auto" alt="QR Code Auto">
+            </div>
+            <div class="signature">Simon Silver</div>
+        </div>
+    </div>
+
+    <!-- VOLANTINO 2: Cos'è? -->
+    <div class="volantino volantino-2" id="v-mistero">
+        <div class="content">
+            <div class="testo-linea">La usi ogni giorno.</div>
+            <div class="testo-linea highlight">Ma non la conosci.</div>
+            <div class="testo-linea highlight">Solitamente è nascosta.</div>
+            <div class="testo-domanda">Cos'è?</div>
+        </div>
+        <div class="qr-section">
+            <div class="qr-box">
+                <!-- QR Code generato dinamicamente con l'URL per la variante mistero -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=https://simonsilver.it/scopri?v=mistero" alt="QR Code Mistero">
+            </div>
+            <div class="signature">Simon Silver</div>
+        </div>
+    </div>
+
+    <script>
+        // Script per permettere il download in futuro, o semplicemente
+        // puoi usare uno strumento per stampare la pagina in PDF / catturare screenshot
+        console.log("Volantini pronti per lo screenshot");
+    </script>
+</body>
+</html>
