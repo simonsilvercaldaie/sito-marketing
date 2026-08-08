@@ -475,10 +475,6 @@ function generaPagina(comune) {
                     🚗 ${dist_km === "0" ? "Sede Operativa Diretta" : "Distanza da Sede Casciago: " + dist_km + " km (~" + tempo_min + " min)"}
                 </div>
             </div>
-            <div class="local-zone-tag" style="display:none;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                ${nome} · Provincia di Varese
-            </div>
             <h1 class="local-hero-title">
                 Assistenza Caldaie<br>
                 <span class="text-accent">a ${nome}</span>
