@@ -60,6 +60,9 @@ const comuni = [
 // ============================================
 function generaPagina(comune) {
     const { nome, slug, cap, pop, zona, desc_extra } = comune;
+    const distInfo = {"varese":{"km":"3","min":"5"},"casciago":{"km":"0","min":"0"},"luvinate":{"km":"1","min":"2"},"comerio":{"km":"4","min":"6"},"barasso":{"km":"2","min":"3"},"busto-arsizio":{"km":"22","min":"25"},"gallarate":{"km":"18","min":"22"},"saronno":{"km":"25","min":"30"},"legnano":{"km":"26","min":"30"},"tradate":{"km":"16","min":"20"},"cassano-magnago":{"km":"18","min":"22"},"somma-lombardo":{"km":"20","min":"25"},"cardano-al-campo":{"km":"22","min":"26"},"sesto-calende":{"km":"20","min":"25"},"malnate":{"km":"8","min":"12"},"induno-olona":{"km":"6","min":"10"},"arcisate":{"km":"10","min":"14"},"gavirate":{"km":"6","min":"8"},"laveno-mombello":{"km":"18","min":"22"},"luino":{"km":"22","min":"28"},"besozzo":{"km":"10","min":"12"},"cittiglio":{"km":"12","min":"15"},"cocquio-trevisago":{"km":"8","min":"10"},"gemonio":{"km":"10","min":"14"},"azzate":{"km":"7","min":"10"},"bodio-lomnago":{"km":"7","min":"10"},"inarzo":{"km":"8","min":"11"},"cazzago-brabbia":{"km":"7","min":"9"},"buguggiate":{"km":"6","min":"8"},"gazzada-schianno":{"km":"7","min":"10"}}[slug] || { km: "5", min: "8" };
+    const dist_km = distInfo.km;
+    const tempo_min = distInfo.min;
     
     const title = `Assistenza Caldaie ${nome} · Simon Silver · Tecnico Specializzato`;
     const metaDesc = `Assistenza e manutenzione caldaie a ${nome} (${cap}). Simon Silver — 20 anni di esperienza, 25.000 iscritti su YouTube. Diagnosi precisa, problema chiuso. Varese e provincia.`;
@@ -463,7 +466,16 @@ function generaPagina(comune) {
                 <span>›</span>
                 <span>Assistenza Caldaie ${nome}</span>
             </div>
-            <div class="local-zone-tag">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+                <div class="local-zone-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    CAP ${cap} · ${nome} (${zona})
+                </div>
+                <div class="local-zone-tag" style="background:rgba(37,211,102,0.15); color:#25d366; border-color:rgba(37,211,102,0.3);">
+                    🚗 ${dist_km === "0" ? "Sede Operativa Diretta" : "Distanza da Sede Casciago: " + dist_km + " km (~" + tempo_min + " min)"}
+                </div>
+            </div>
+            <div class="local-zone-tag" style="display:none;">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 ${nome} · Provincia di Varese
             </div>
