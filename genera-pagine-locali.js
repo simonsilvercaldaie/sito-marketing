@@ -125,6 +125,7 @@ function generaPagina(comune) {
             "latitude": 45.8341,
             "longitude": 8.7733
         },
+        "knowsLanguage": ["it", "en"],
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
