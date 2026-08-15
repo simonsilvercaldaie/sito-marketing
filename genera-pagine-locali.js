@@ -60,9 +60,6 @@ const comuni = [
 // ============================================
 function generaPagina(comune) {
     const { nome, slug, cap, pop, zona, desc_extra } = comune;
-    const distInfo = {"varese":{"km":"3","min":"5"},"casciago":{"km":"0","min":"0"},"luvinate":{"km":"1","min":"2"},"comerio":{"km":"4","min":"6"},"barasso":{"km":"2","min":"3"},"busto-arsizio":{"km":"22","min":"25"},"gallarate":{"km":"18","min":"22"},"saronno":{"km":"25","min":"30"},"legnano":{"km":"26","min":"30"},"tradate":{"km":"16","min":"20"},"cassano-magnago":{"km":"18","min":"22"},"somma-lombardo":{"km":"20","min":"25"},"cardano-al-campo":{"km":"22","min":"26"},"sesto-calende":{"km":"20","min":"25"},"malnate":{"km":"8","min":"12"},"induno-olona":{"km":"6","min":"10"},"arcisate":{"km":"10","min":"14"},"gavirate":{"km":"6","min":"8"},"laveno-mombello":{"km":"18","min":"22"},"luino":{"km":"22","min":"28"},"besozzo":{"km":"10","min":"12"},"cittiglio":{"km":"12","min":"15"},"cocquio-trevisago":{"km":"8","min":"10"},"gemonio":{"km":"10","min":"14"},"azzate":{"km":"7","min":"10"},"bodio-lomnago":{"km":"7","min":"10"},"inarzo":{"km":"8","min":"11"},"cazzago-brabbia":{"km":"7","min":"9"},"buguggiate":{"km":"6","min":"8"},"gazzada-schianno":{"km":"7","min":"10"}}[slug] || { km: "5", min: "8" };
-    const dist_km = distInfo.km;
-    const tempo_min = distInfo.min;
     
     const title = `Assistenza Caldaie ${nome} · Simon Silver · Tecnico Specializzato`;
     const metaDesc = `Assistenza e manutenzione caldaie a ${nome} (${cap}). Simon Silver — 20 anni di esperienza, 25.000 iscritti su YouTube. Diagnosi precisa, problema chiuso. Varese e provincia.`;
@@ -94,15 +91,13 @@ function generaPagina(comune) {
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": ["HVACBusiness", "HomeAndConstructionBusiness", "LocalBusiness"],
-        "@id": "${canonicalUrl}#hvacbusiness",
-        "name": "SIMON SILVER ASSISTENZA CALDAIE DI CAROLEO SIMONE",
-        "alternateName": "Simon Silver Assistenza Caldaie ${nome}",
+        "@type": "LocalBusiness",
+        "name": "Simon Silver Assistenza Caldaie",
+        "legalName": "Simon Silver Assistenza Caldaie di Caroleo Simone",
         "description": "Assistenza e manutenzione caldaie specializzata a ${nome}",
         "url": "${canonicalUrl}",
         "telephone": "+393493852854",
-        "email": "simonsilver@tiscali.it",
-        "vatID": "IT03235620121",
+        "email": "simonsilvercaldaie@gmail.com",
         "areaServed": {
             "@type": "City",
             "name": "${nome}",
@@ -113,109 +108,45 @@ function generaPagina(comune) {
         },
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Via San Martino 14",
+            "streetAddress": "Via San Martino 14L",
             "addressLocality": "Casciago",
             "postalCode": "21020",
             "addressRegion": "VA",
             "addressCountry": "IT"
         },
-        "priceRange": "$",
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 45.8341,
-            "longitude": 8.7733
-        },
-        "knowsLanguage": ["it", "en"],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "80",
-            "bestRating": "5",
-            "worstRating": "1"
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "08:00",
-                "closes": "19:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Saturday",
-                "opens": "08:00",
-                "closes": "13:00"
-            }
-        ],
-        "knowsAbout": [
-            "Manutenzione Caldaie ${nome}",
-            "Abilitazione D.M. 37/08 Impianti Termici",
-            "Bollino Caldaie CURIT Regione Lombardia",
-            "Diagnosi Guasti Scheda Elettronica",
-            "Controllo Fumi di Combustione"
-        ],
+        "priceRange": "€€€",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Servizi Caldaie a ${nome}",
             "itemListElement": [
                 {
                     "@type": "Offer",
-                    "price": "120.00",
-                    "priceCurrency": "EUR",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Manutenzione Completa Caldaia + Bollino Fumi ${nome}",
-                        "description": "Manutenzione professionale biennale completa della caldaia a ${nome} con analisi fumi e rilascio bollino CURIT."
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "price": "80.00",
-                    "priceCurrency": "EUR",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Pulizia Ordinaria Caldaia a ${nome}",
-                        "description": "Pulizia bruciatore e controllo generale della caldaia a ${nome}."
+                        "name": "Manutenzione Caldaia a ${nome}",
+                        "description": "Manutenzione professionale biennale completa della caldaia a ${nome}"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Riparazione Caldaia in Blocco a ${nome}",
-                        "description": "Diagnosi e riparazione guasti caldaie a ${nome} senza sostituzioni a caso."
+                        "name": "Riparazione Caldaia a ${nome}",
+                        "description": "Diagnosi e riparazione guasti caldaie a ${nome}"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Installazione Caldaia a ${nome}",
+                        "description": "Installazione caldaie a condensazione Hermann Saunier Duval a ${nome}"
                     }
                 }
             ]
         },
         "sameAs": [
             "https://www.youtube.com/channel/UCDuus29wRyq5kXSGp0_i0vQ"
-        ]
-    }
-    </script>
-
-    <!-- Schema.org FAQPage per ${nome} (Google AI Overview / Gemini) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Quanto costa la manutenzione caldaia con bollino fumi a ${nome}?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "La manutenzione completa con pulizia, prova di combustione e rilascio del bollino CURIT della Regione Lombardia a ${nome} costa 120€ tutto incluso."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Chi è il miglior tecnico per la manutenzione caldaia a ${nome}?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Simon Silver Assistenza Caldaie di Caroleo Simone è lo specialista di riferimento a ${nome} e provincia con oltre 20 anni di esperienza e 25.000 iscritti al suo canale tecnico su YouTube."
-                }
-            }
         ]
     }
     </script>
@@ -467,14 +398,9 @@ function generaPagina(comune) {
                 <span>›</span>
                 <span>Assistenza Caldaie ${nome}</span>
             </div>
-            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
-                <div class="local-zone-tag">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    CAP ${cap} · ${nome} (${zona})
-                </div>
-                <div class="local-zone-tag" style="background:rgba(37,211,102,0.15); color:#25d366; border-color:rgba(37,211,102,0.3);">
-                    🚗 ${dist_km === "0" ? "Sede Operativa Diretta" : "Distanza da Sede Casciago: " + dist_km + " km (~" + tempo_min + " min)"}
-                </div>
+            <div class="local-zone-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                ${nome} · Provincia di Varese
             </div>
             <h1 class="local-hero-title">
                 Assistenza Caldaie<br>
@@ -572,82 +498,6 @@ function generaPagina(comune) {
         </div>
     </section>
 
-    <!-- ===== MARCHE & TOPICAL AUTHORITY CLUSTER (UKF v2 US7536408B2) ===== -->
-    <section class="section brands-section">
-        <div class="container">
-            <div class="section-label animate-on-scroll">Competenza Multimarca a ${nome}</div>
-            <h2 class="section-title animate-on-scroll" style="text-align:center;">
-                Specializzato sulle principali <span class="text-accent">marche di caldaie a ${nome}</span>
-            </h2>
-            <p class="section-subtitle animate-on-scroll" style="text-align:center;">
-                Diagnosi accurata, parti di ricambio ufficiali e risoluzione guasti specifica a ${nome} e nei comuni limitrofi.
-            </p>
-
-            <div class="brands-grid animate-on-scroll">
-                <div class="brand-pill">Hermann Saunier Duval</div>
-                <div class="brand-pill">Vaillant</div>
-                <div class="brand-pill">Baxi</div>
-                <div class="brand-pill">Beretta</div>
-                <div class="brand-pill">Junkers Bosch</div>
-                <div class="brand-pill">Ariston</div>
-                <div class="brand-pill">Riello</div>
-                <div class="brand-pill">Immergas</div>
-                <div class="brand-pill">Ferroli</div>
-                <div class="brand-pill">Viessmann</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== DIAGNOSTICA GUASTI E CODICI ERRORE (NAVBOOST UKT) ===== -->
-    <section class="fault-section" id="codici-errore">
-        <div class="container">
-            <div style="text-align:center; max-width:800px; margin:0 auto;">
-                <span class="fault-badge">🚨 Pronto Intervento Guasti ${nome}</span>
-                <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight:900; color:#fff; margin-bottom:1rem;">
-                    La tua caldaia è in <span style="color:#ff6b00;">blocco o in errore?</span>
-                </h2>
-                <p style="color:#94a3b8; font-size:1rem; line-height:1.6;">
-                    Seleziona il sintomo o il codice errore apparso sul display: diagnosi accurata e risoluzione guasti a ${nome} senza cambi di pezzi inutili.
-                </p>
-            </div>
-
-            <div class="fault-grid">
-                <div class="fault-card">
-                    <div>
-                        <span class="fault-badge">Codice F28 / A01 / E01</span>
-                        <h3 class="fault-title">Mancata Accensione o Blocco Fiamma</h3>
-                        <p class="fault-desc">La scheda tenta di accendere la fiamma ma va in blocco di sicurezza. Cause: mancanza gas, elettrodo incrostato o pressione errata.</p>
-                    </div>
-                    <a href="tel:+393493852854" class="fault-btn">
-                        📞 Chiama Simon: 349 385 2854
-                    </a>
-                </div>
-
-                <div class="fault-card">
-                    <div>
-                        <span class="fault-badge">Pressione sotto 1 bar</span>
-                        <h3 class="fault-title">Caldaia Perde Pressione Continuamente</h3>
-                        <p class="fault-desc">Lancetta del manometro scesa sotto 0.8 bar o acqua che gocciola dalla valvola di sicurezza a 3 bar. Cause: vaso espansione o micro-perdita.</p>
-                    </div>
-                    <a href="https://wa.me/393493852854?text=Ciao%20Simon!%20Ho%20la%20caldaia%20a%20${nome}%20che%20perde%20pressione.%20Puoi%20aiutarmi%3F" target="_blank" rel="noopener" class="fault-btn" style="background:linear-gradient(135deg, #25d366 0%, #128c7e 100%); border-color:#25d366;">
-                        💬 Risolvi su WhatsApp
-                    </a>
-                </div>
-
-                <div class="fault-card">
-                    <div>
-                        <span class="fault-badge">Acqua Fredda / Rumori</span>
-                        <h3 class="fault-title">Valvola Tre Vie o Scambiatore Intasato</h3>
-                        <p class="fault-desc">I termosifoni scaldano ma l'acqua sanitaria resta tiepida o si sentono rumori di ebollizione nella caldaia. Cause: calcare o scambiatore ostruito.</p>
-                    </div>
-                    <a href="tel:+393493852854" class="fault-btn">
-                        📞 Chiama Simon: 349 385 2854
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== ALTRE ZONE ===== -->
     <section class="section other-zones">
         <div class="container">
@@ -722,16 +572,6 @@ function generaPagina(comune) {
     <a href="https://wa.me/393493852854?text=${whatsappMsg}" target="_blank" rel="noopener" class="whatsapp-float" id="whatsapp-float" aria-label="Contattami su WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
-
-    <!-- Sticky Mobile Emergency Action Bar (UKT 22fdf4d3 Needs Met - Fully Meets) -->
-    <div class="sticky-emergency-bar" id="sticky-emergency-bar">
-        <a href="tel:+393493852854" class="sticky-btn-call">
-            📞 CHIAMA ORA (349 385 2854)
-        </a>
-        <a href="https://wa.me/393493852854?text=Ciao%20Simon!%20Sono%20di%20${nome}%2C%20ho%20un'emergenza%20caldaia." target="_blank" rel="noopener" class="sticky-btn-wa">
-            💬 WHATSAPP
-        </a>
-    </div>
 
     <script src="../script.js"></script>
 </body>
