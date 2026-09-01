@@ -1,3 +1,15 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/zone/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zone",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
